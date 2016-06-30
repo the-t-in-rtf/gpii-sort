@@ -1,0 +1,5 @@
+{
+    "test_page": "tests/browser-tests.html",
+    "framework":   "qunit",
+    "parallel":    1
+}

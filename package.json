@@ -1,0 +1,29 @@
+{
+  "name": "gpii-sort",
+  "version": "1.0.0",
+  "description": "A library to enable lucene-like sorting of array content.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:node; npm run test:browser",
+    "test:node": "node node_modules/ tests/common-tests.js",
+    "test:browser": "node node_modules/testem/testem.js ci --skip Safari"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-t-in-rtf/gpii-sort.git"
+  },
+  "author": "Tony Atkins <tony@raisingthefloor.org>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/the-t-in-rtf/gpii-sort/issues"
+  },
+  "homepage": "https://github.com/the-t-in-rtf/gpii-sort#readme",
+  "dependencies": {
+    "infusion": "2.0.0-dev.20160519T222603Z.754d2c6"
+  },
+  "devDependencies": {
+    "istanbul": "0.4.4",
+    "node-jqunit": "1.1.4",
+    "testem": "1.9.1"
+  }
+}
