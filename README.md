@@ -73,3 +73,13 @@ The sort would result in the following order:
     { color: "red", weight: 0.025, name: "Strawberry" },
 ]
 ```
+
+Note that as with `Array.sort`, comparisons between types are handled by comparing the string value of each object, as
+in the following example:
+
+```
+gpii.sort([{ a: false }, { a: 0 }, { a: "a string" }], "a");
+
+// returns [{ a: 0 }, { a: "a string" }, { a: false }]
+```
+
