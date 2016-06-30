@@ -12,30 +12,11 @@ var gpii  = fluid.registerNamespace("gpii");
 // Like `Array.sort()` itself, this will modify the source array.  If you do not want this, you are expected to provide
 // a copy of the array yourself, for example, by passing in the output of `fluid.copy(array)`.
 gpii.sort = function (array, sortParams) {
-    if (Array.isArray(sortParams)) {
-        return gpii.sort.sortByArray(array, sortParams);
-    }
-    else if (typeof sortParams === "string") {
-        return gpii.sort.sortByValue(array, sortParams);
-    }
-
-    // Anything else fails silently
-};
-
-// Process an array of sort parameters.
-gpii.sort.sortByArray = function (array, sortParams) {
-    // We must apply the search in reverse so that the most significant sorting is applied last.
-    var reverseParams = sortParams.reverse();
-
-    fluid.each(reverseParams, function (param) {
-        gpii.sort.sortByValue(array, param);
+    var paramsArray = fluid.makeArray(sortParams);
+    fluid.each(paramsArray.reverse(), function (param) {
+        var sortFunction = gpii.sort.generateSortFunction(param);
+        fluid.stableSort(array, sortFunction);
     });
-};
-
-// Process a single sort parameter
-gpii.sort.sortByValue = function (array, sortParam) {
-    var sortFunction = gpii.sort.generateSortFunction(sortParam);
-    fluid.stableSort(array, sortFunction);
 };
 
 // Returns true if a string is `undefined`, `null`, or an empty (trimmed) string.
@@ -115,9 +96,11 @@ gpii.sort.generateSortFunction = function (rawParam) {
 
 // Extract the field name from the sort parameter, without including the optional direction and type qualifiers.
 gpii.sort.getParam = function (rawParam) {
-    var matches = rawParam.match(/^([\\/])?([^<]+)<?.*$/);
-    if (matches) {
-        return matches[2];
+    if (rawParam.match) {
+        var matches = rawParam.match(/^[\\/]?([^<]+)<?.*$/);
+        if (matches) {
+            return matches[1];
+        }
     }
 
     return rawParam;
@@ -125,9 +108,11 @@ gpii.sort.getParam = function (rawParam) {
 
 // Extract the type qualifier, if no type is found, we default to "natural".
 gpii.sort.getType = function (rawParam) {
-    var matches = rawParam.match(/^.+<(.+)>$/);
-    if (matches) {
-        return matches[1];
+    if (rawParam.match) {
+        var matches = rawParam.match(/^.+<(.+)>$/);
+        if (matches) {
+            return matches[1];
+        }
     }
 
     return "natural";
@@ -135,10 +120,5 @@ gpii.sort.getType = function (rawParam) {
 
 // If we have a slash prepended in front of us, we are descending (-1).  Otherwise, we are ascending (1).
 gpii.sort.getDirection = function (rawParam) {
-    var matches = rawParam.match(/^\\.+/);
-    if (matches) {
-        return -1;
-    }
-
-    return 1;
+    return rawParam[0] === "\\" ? -1 : 1;
 };
