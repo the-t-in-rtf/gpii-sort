@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:node; npm run test:browser",
-    "test:node": "node node_modules/ tests/common-tests.js",
+    "test:node": "node tests/common-tests.js",
     "test:browser": "node node_modules/testem/testem.js ci --skip Safari"
   },
   "repository": {
@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/the-t-in-rtf/gpii-sort#readme",
   "dependencies": {
-    "infusion": "2.0.0-dev.20160519T222603Z.754d2c6"
+    "infusion": "2.0.0-dev.20161219T170555Z.5778f7e"
   },
   "devDependencies": {
-    "istanbul": "0.4.4",
+    "istanbul": "0.4.5",
     "node-jqunit": "1.1.4",
-    "testem": "1.9.1"
+    "testem": "1.14.3"
   }
 }
