@@ -564,9 +564,9 @@ infusion@2.0.0-dev.20151130T180545Z.18ee3f8:
   dependencies:
     resolve "1.1.6"
 
-infusion@2.0.0-dev.20161219T170555Z.5778f7e:
-  version "2.0.0-dev.20161219T170555Z.5778f7e"
-  resolved "https://registry.yarnpkg.com/infusion/-/infusion-2.0.0-dev.20161219T170555Z.5778f7e.tgz#3568b448d1e6c0a491e8ad45d6c592de3b7fd4bf"
+infusion@3.0.0-dev.20170127T130413Z.103de6e:
+  version "3.0.0-dev.20170127T130413Z.103de6e"
+  resolved "https://registry.yarnpkg.com/infusion/-/infusion-3.0.0-dev.20170127T130413Z.103de6e.tgz#59d5163cd6c55d4c5b3c34af54b74fdb331b1a1d"
   dependencies:
     fluid-resolve "1.2.0"
 

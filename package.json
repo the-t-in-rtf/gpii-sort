@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/the-t-in-rtf/gpii-sort#readme",
   "dependencies": {
-    "infusion": "2.0.0-dev.20161219T170555Z.5778f7e"
+    "infusion": "3.0.0-dev.20170127T130413Z.103de6e"
   },
   "devDependencies": {
     "istanbul": "0.4.5",
