@@ -4,9 +4,11 @@
   "description": "A library to enable lucene-like sorting of array content.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test:node; npm run test:browser",
-    "test:node": "node tests/common-tests.js",
-    "test:browser": "node node_modules/testem/testem.js ci --skip Safari"
+    "pretest": "node node_modules/rimraf/bin.js reports/* coverage/*",
+    "test": "npm run test:node && npm run test:browser",
+    "test:browser": "node node_modules/testem/testem.js ci --file tests/testem.js --skip safari,phantomjs,IE",
+    "test:node": "node node_modules/istanbul/lib/cli.js cover tests/common-tests.js --report none --print none",
+    "posttest": "node node_modules/istanbul/lib/cli.js report --root coverage --dir reports text-summary html"
   },
   "repository": {
     "type": "git",
@@ -19,11 +21,13 @@
   },
   "homepage": "https://github.com/the-t-in-rtf/gpii-sort#readme",
   "dependencies": {
-    "infusion": "3.0.0-dev.20170127T130413Z.103de6e"
+    "infusion": "3.0.0-dev.20170322T234120Z.278de35"
   },
   "devDependencies": {
+    "gpii-testem": "1.0.0-dev.20170419T084501Z.6d115d4",
     "istanbul": "0.4.5",
     "node-jqunit": "1.1.4",
-    "testem": "1.14.3"
+    "rimraf": "2.6.1",
+    "testem": "1.13.0"
   }
 }
