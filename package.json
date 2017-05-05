@@ -24,10 +24,10 @@
     "infusion": "3.0.0-dev.20170322T234120Z.278de35"
   },
   "devDependencies": {
-    "gpii-testem": "1.0.0-dev.20170419T084501Z.6d115d4",
+    "gpii-testem": "1.0.0-dev.20170426T161352Z.8a06597",
     "istanbul": "0.4.5",
     "node-jqunit": "1.1.4",
     "rimraf": "2.6.1",
-    "testem": "1.13.0"
+    "testem": "1.16.1"
   }
 }
