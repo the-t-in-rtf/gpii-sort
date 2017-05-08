@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "node node_modules/rimraf/bin.js reports/* coverage/*",
     "test": "npm run test:node && npm run test:browser",
-    "test:browser": "node node_modules/testem/testem.js ci --file tests/testem.js --skip safari,phantomjs,IE",
+    "test:browser": "node node_modules/testem/testem.js ci --file tests/testem.js",
     "test:node": "node node_modules/istanbul/lib/cli.js cover tests/common-tests.js --report none --print none",
     "posttest": "node node_modules/istanbul/lib/cli.js report --root coverage --dir reports text-summary html"
   },
