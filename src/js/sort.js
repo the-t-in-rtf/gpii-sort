@@ -1,5 +1,5 @@
 /*
-    
+
     Static functions to add support for sorting arrays using lucene-like syntax.  See the README.md file for details.
 
  */

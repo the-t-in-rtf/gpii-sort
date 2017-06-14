@@ -12,19 +12,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/the-t-in-rtf/gpii-sort.git"
+    "url": "git+https://github.com/GPII/gpii-sort.git"
   },
   "author": "Tony Atkins <tony@raisingthefloor.org>",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/the-t-in-rtf/gpii-sort/issues"
+    "url": "https://github.com/GPII/gpii-sort/issues"
   },
-  "homepage": "https://github.com/the-t-in-rtf/gpii-sort#readme",
+  "homepage": "https://github.com/GPII/gpii-sort#readme",
   "dependencies": {
     "infusion": "3.0.0-dev.20170322T234120Z.278de35"
   },
   "devDependencies": {
-    "gpii-testem": "1.0.0-dev.20170426T161352Z.8a06597",
+    "eslint": "3.19.0",
+    "eslint-config-fluid": "1.1.0",
+    "fluid-grunt-eslint": "18.1.2",
+    "gpii-testem": "1.0.0",
+    "grunt": "1.0.1",
+    "grunt-jsonlint": "1.1.0",
     "istanbul": "0.4.5",
     "node-jqunit": "1.1.4",
     "rimraf": "2.6.1",
