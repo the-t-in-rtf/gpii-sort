@@ -74,7 +74,7 @@ The sort would result in the following order:
 ]
 ```
 
-Note that as with `Array.sort`, comparisons between types are handled by comparing the string value of each object, as
+Note that as with [`Array.sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), comparisons between types are handled by comparing the string value of each object, as
 in the following example:
 
 ```
