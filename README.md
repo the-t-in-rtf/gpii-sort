@@ -1,15 +1,15 @@
 # gpii-sort
 
-A library that contains static functions to sort array content using lucene-like syntax.  To ensure [stable sorting](https://en.wikipedia.org/wiki/Sorting_algorithm#Stability),
-we use the `fluid.stableSort` function provided by Infusion.
-
+A library that contains static functions to sort array content using [lucene-like syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html).  To ensure [stable sorting](https://en.wikipedia.org/wiki/Sorting_algorithm#Stability),
+we use [the `fluid.stableSort` function provided by Infusion](http://docs.fluidproject.org/infusion/development/CoreAPI.html#fluid-stablesort-array-func-).
+aaaa
 # `gpii.sort(array, sortCriteria)`
 
 * `array`: The array to be sorted.
 * `sortCriteria`: An array of sort terms.  These are applied in reverse order (see examples below).
 * Returns: The sorted array.
 
-Note that as with `Array.sort`, the order of the original array is modified.
+Note that as with [`Array.sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), the order of the original array is modified.
 
 # Usage Examples
 
@@ -74,7 +74,7 @@ The sort would result in the following order:
 ]
 ```
 
-Note that as with `Array.sort`, comparisons between types are handled by comparing the string value of each object, as
+Note that as with [`Array.sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort), comparisons between types are handled by comparing the string value of each object, as
 in the following example:
 
 ```
